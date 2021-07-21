@@ -33,7 +33,6 @@ const cart = [
 function countCartPrice(cart) {
     var sumPrice = 0;
     for (let i = 0; i < cart.length; i++) {
-
         sumPrice += cart[i][1] * cart[i][2];
     }
     return sumPrice;
