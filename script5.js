@@ -12,19 +12,19 @@ function creareChessDesk() {
             col.style.textAlign = 'center';
             col.style.verticalAlign = 'middle';
             if (x % 2 == 0 && y % 2 != 0 && x != 0 && y != 0) {
-                col.style.backgroundColor = 'black'
+                col.style.backgroundColor = 'black';
             } else if (x % 2 != 0 && y % 2 == 0 && x != 0 && y != 0) {
-                col.style.backgroundColor = 'black'
+                col.style.backgroundColor = 'black';
             } else if (x == 0 && y != 0) {
                 col.textContent = arrAbc[y - 1];
-                col.style.backgroundColor = '#ffeaea'
+                col.style.backgroundColor = '#ffeaea';
             } else if (y == 0 && x != 0) {
                 col.textContent = x;
-                col.style.backgroundColor = '#ffeaea'
-            }
-        }
-    }
-}
+                col.style.backgroundColor = '#ffeaea';
+            };
+        };
+    };
+};
 creareChessDesk()
 
 // Задача2. Сделать генерацию корзины динамической: верстка корзины не должна находиться в HTML-структуре. Там должен быть только div, в который будет вставляться корзина, сгенерированная на базе JS:
