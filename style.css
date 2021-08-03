@@ -1,0 +1,29 @@
+* {
+  margin: 10px;
+  padding: 0;
+}
+
+.catalog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  article-margin: 10 px;
+}
+
+.catalog .buy__item {
+  height: 25px;
+  width: 45px;
+  background-color: red;
+  text-align: center;
+}
+
+.cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cart article {
+  margin: 10px;
+}
+/*# sourceMappingURL=style.css.map */
