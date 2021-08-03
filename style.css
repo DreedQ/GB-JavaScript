@@ -17,6 +17,12 @@
   text-align: center;
 }
 
+.cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .cart article {
   margin: 10px;
 }
