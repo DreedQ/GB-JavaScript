@@ -93,8 +93,9 @@ const map = {
         this.getScore().textContent = `${ snake.body.length - 1}`;
     },
     // =========================================
-
+    // ====================== ТУТ МОЙ КОД(добавение)
     render(snakePointsArray, foodPoint, blockPoint) {
+        // =====================
         for (const cell of this.usedCells) {
             cell.className = 'cell';
         }
@@ -106,11 +107,11 @@ const map = {
             snakeCell.classList.add(index === 0 ? 'snakeHead' : 'snakeBody');
             this.usedCells.push(snakeCell);
         });
-
+        // ====================== ТУТ МОЙ КОД(добавение)
         const blockCell = this.cells[`x${blockPoint.x}_y${blockPoint.y}`];
         blockCell.classList.add('block');
         this.usedCells.push(blockCell);
-
+        // ====================== (добавение)
         const foodCell = this.cells[`x${foodPoint.x}_y${foodPoint.y}`];
         foodCell.classList.add('food');
         this.usedCells.push(foodCell);
@@ -196,7 +197,7 @@ const food = {
         return this.x === point.x && this.y === point.y;
     },
 };
-
+// ====================== ТУТ МОЙ КОД
 const block = {
     x: null,
     y: null,
@@ -217,7 +218,7 @@ const block = {
         return this.x === point.x && this.y === point.y;
     },
 };
-
+// ======================
 const status = {
     condition: null,
 
@@ -324,7 +325,9 @@ const game = {
         this.stop();
         this.snake.init(this.getStartSnakeBody(), 'up');
         this.food.setCoordinates(this.getRandomFreeCoordinates());
+        // ====================== ТУТ МОЙ КОД(добавение)
         this.block.setCoordinates(this.getRandomFreeCoordinates());
+        // ====================== 
         this.render()
     },
 
@@ -336,8 +339,9 @@ const game = {
     },
 
     getRandomFreeCoordinates() {
+        // ====================== ТУТ МОЙ КОД(добавение)
         const exclude = [this.food.getCoordinates(), this.block.getCoordinates(), ...this.snake.getBody()];
-
+        // ======================
         while (true) {
             const rndPoint = {
                 x: Math.floor(Math.random() * this.config.getColsCount()),
@@ -349,8 +353,9 @@ const game = {
     },
 
     getRandomFreeCoordinatesBlock() {
+        // ====================== ТУТ МОЙ КОД(добавение)
         const exclude = [this.food.getCoordinates(), this.block.getCoordinates(), ...this.snake.getBody()];
-
+        // ====================== 
         while (true) {
             const rndPoint = {
                 x: Math.floor(Math.random() * this.config.getColsCount()),
@@ -383,9 +388,11 @@ const game = {
 
     tickHandler() {
         if (!this.canMakeStep()) return this.finish();
+        // ====================== ТУТ МОЙ КОД
         if (this.block.isOnPoint(this.snake.getNextStepHeadPoint())) {
             this.finish()
         };
+        // ======================
         if (this.food.isOnPoint(this.snake.getNextStepHeadPoint())) {
             this.snake.growUp();
             this.food.setCoordinates(this.getRandomFreeCoordinates());
@@ -422,7 +429,9 @@ const game = {
     },
 
     render() {
+        // ====================== ТУТ МОЙ КОД(добавение)
         this.map.render(this.snake.getBody(), this.food.getCoordinates(), this.block.getCoordinates());
+        // ====================== 
     },
 };
 
